@@ -85,7 +85,7 @@ class App {
          r, -1 + yoff, -r,
       ]));
 
-      {
+      if (true) {
         const normals = new Float32Array([
           0, 1, 0,
           0, 1, 0,
@@ -166,10 +166,10 @@ class App {
     window.requestAnimationFrame(this.render);
   }
   render() {
-    const eye = [0, 20, 1];
+    const eye = [0, 4, 4];
     const center = [0, 0, 0];
     const up = [0, 1, 0];
-    const radians = 0; //Date.now() / 2_000;
+    const radians = Date.now() / 5_000;
     vec3.rotateY(eye, eye, center, radians);
     this.camera.lookAt(eye, center, up);
     this.renderer.render(this.swapChain, this.view);
