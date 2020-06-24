@@ -1,0 +1,15 @@
+material {
+    name : "Invisible shadow surfaces",
+    // culling : none,
+    shadingModel : unlit,
+    blending : transparent,
+    shadowMultiplier : true,
+    // variantFilter : [ shadowReceiver ]
+}
+
+fragment {
+    void material(inout MaterialInputs material) {
+        material.baseColor = vec4(0.0, 1.0, 0.0, 1.0);
+        prepareMaterial(material);
+    }
+}
